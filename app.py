@@ -1,9 +1,13 @@
+import os
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"]='1'
+from huggingface_hub import snapshot_download
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 class InferlessPythonModel:
     def initialize(self):
         model_id = 'Deci/DeciLM-7B'
+        snapshot_download(repo_id=model_id,allow_patterns=["*.safetensors"])
         tokenizer = AutoTokenizer.from_pretrained(model_id)
         model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto",load_in_4bit=True,trust_remote_code=True)
         self.qtq_pipe = pipeline("text-generation", model=model, tokenizer=tokenizer)
