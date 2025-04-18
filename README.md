@@ -1,5 +1,5 @@
 # Tutorial - Deploy DeciLM-7B using Inferless
-DeciLM‑7B is a 7 billion‑parameter, decoder‑only Transformer by Deci AI, engineered for ultra‑efficient inference. It leverages automated quantization, compiler optimizations, and dynamic batching to deliver sub‑second latency on CPU, GPU, and edge devices, ideal for real‑time NLP workloads.
+DeciLM‑7B is a high‑efficiency, 7.04 billion‑parameter decoder‑only language model released by Deci AI. Designed for optimal performance in text generation tasks, it employs variable Grouped‑Query Attention (GQA) to balance computational efficiency with accuracy. The model's architecture was generated using Deci's proprietary Neural Architecture Search technology, AutoNAC, which fine‑tunes architectural parameters to enhance throughput and performance.
 
 Check out [this tutorial](https://tutorials.inferless.com/deploy-deci-7b-using-inferless) which will guide you through the process of deploying a DeciLM-7B model using Inferless.
 
